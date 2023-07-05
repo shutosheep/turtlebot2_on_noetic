@@ -1,6 +1,6 @@
 # turtlebot2_on_noetic
 
-Setup Turtlebot2 on ROS Noetic
+Setup Turtlebot2 on ROS Noetic (Ubuntu 20.04)
 
 ## Requirements
 
@@ -17,19 +17,29 @@ cd ~/catkin_ws/
 catkin_make
 ```
 
+## Add udev rules (Recommended)
+
+To ensure the connections with Kobuki, it is recommended to add udev rules by
+running the following command.
+
+```
+source devel/setup.bash
+rosrun kobuki_ftdi create_udev_rules
+```
+
 ## Run your Turtlebot2
 
 Bringup your turtlebot.
 
 ```
-source ./devel/setup.bash
+source devel/setup.bash
 roslaunch turtlebot_bringup minimal.launch
 ```
 
 Operate your turtlebot with keyboard.
 
 ```
-source ./devel/setup.bash
+source devel/setup.bash
 roslaunch turtlebot_teleop keyboard_teleop.launch
 ```
 
