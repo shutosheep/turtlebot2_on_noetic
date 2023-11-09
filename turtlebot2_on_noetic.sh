@@ -49,5 +49,6 @@ rosdep update
 rosdep install --from-paths . -r -y --ignore-src
 
 # fix error with using old python
-sed -i "s,#!/usr/bin/env python,#!/usr/bin/env python3,g" turtlebot/turtlebot_teleop/scripts/turtlebot_teleop_key
-sed -i "s,#!/usr/bin/env python,#!/usr/bin/env python3,g" laptop_battery_monitor/scripts/laptop_battery.py
+sed -i "s,#!/usr/bin/env python,#!/usr/bin/env python3,g" \
+    turtlebot/turtlebot_teleop/scripts/turtlebot_teleop_key \
+    laptop_battery_monitor/scripts/laptop_battery.py
